@@ -1,0 +1,75 @@
+.container{
+    padding: 50px 50px;
+}
+.page-heading{
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    padding-bottom: 50px;
+}
+.login-title{ 
+    color: #000000;
+    font-family: notosans-bold;
+    font-size: 54px;
+    font-weight: 700;   
+}   
+.login-body{
+    display: flex;
+    justify-content: center;
+    padding: 50px 300px;
+    width: 100%;
+    background-color: #dddddd;
+}
+.form{
+    width: 100%;
+}
+.login-content{
+    display: flex;
+    flex-direction: column;
+    row-gap: 10px;
+    background-color: none;
+    height: 100%;
+    width: 100%;
+}
+.input-login{
+    height: 50px;
+    padding-left: 20px;
+    border: none;
+}
+.input-login:focus{
+    outline: 3px solid #A9A9A9;
+}
+.btnLogin{
+    color: #ffffff;
+    cursor: pointer;
+    height: 50px;
+    border-radius: 6px;
+    border: none;
+    background-color: #1E90FF;
+}
+.btnLogin:hover{
+    background-color: #4169E1;
+}
+.btnLogin:active{
+    background-color: #0000CD;
+}
+.btnGoogle{
+    color: #ffffff;
+    cursor: pointer;
+    height: 50px;
+    border-radius: 6px;
+    border: none;
+    background-color: #FF6347;
+}
+.btnGoogle:hover{
+    background-color: #FF4500;
+}
+.btnGoogle:active{
+    background-color: #FF0000;
+}
+.text-or{
+    text-align: center;
+    font-size: 24px;
+    font-weight: 700;
+    font-family: notosans-bold;
+}

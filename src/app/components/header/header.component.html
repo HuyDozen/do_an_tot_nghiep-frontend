@@ -1,0 +1,122 @@
+<header id="header" class="header">
+    <div class="masthead-wrapper dropdown-search">
+        <div class="masthead--container">
+            <div routerLink="/" class="container-title">
+                <img src="../../../assets/img/logo.png" alt="">
+            </div>
+            <div class="container-nav">
+                <div class="shop-dropdown">
+                    <div class="nav-shop">
+                        CỬA HÀNG  
+                        <div class="dropdown--content">
+                            <div class="content-list">
+                                <div  class="active" routerLink="/">Home</div>
+                                <div  href="/">Hot Deals</div>
+                                <div  href="/">Categories</div>
+                                <div  href="/">Contact Us</div>
+                            </div>
+                        
+                        </div>
+                    </div>
+                    <!-- <div class="dropdown--content">
+                        <div class="content--container">
+                            <div class="container--inside">
+                                <div class="content--row1">
+                                    <div>Home</div>
+                                    <div>Hot Deals</div>
+                                    <div>Category</div>
+                                    <div>ContactUs</div>
+                                </div>
+                                <div class="content--row2">
+                                   
+                                </div>
+                                <div class="content--row3">
+                                    
+                                </div>   
+                            </div>             
+                        </div>
+                        
+                    </div> -->
+                </div>
+                
+                <div class="nav-insideshop">THÔNG TIN THÊM</div> 
+            </div>   
+        </div>
+        <div class="nav-user">
+            <div class="user-selection">
+                <div class="selection-text">
+                    Hỗ trợ
+                </div>
+                <div class="tooltip text-acc" routerLink="/profile">
+                    <fa-icon class="icon" [icon]="faUser"></fa-icon>
+
+                    {{authState == false ? 'LOGIN' : 'My account'}}
+                </div>
+                <div class="">
+                    <fa-icon class="icon " [icon]="faSearch" (click) = "showSearch()">
+                        
+                    </fa-icon>
+                    <!-- <span >Tìm kiếm</span> -->
+
+                    <div *ngIf="show" class="dropdown-srch">   
+                        <fa-icon class="icon " [icon]="faClose" (click) = "showSearch()"></fa-icon>                               
+                        <input  class="dropdown-input" type="text" placeholder="Search"/>    
+                    </div>
+                    
+                </div>
+                
+            </div>
+            <div class="tooltip">
+                <fa-icon class="seletion-cart " [icon]="faShoppingCart" (click) = "showCart1()"></fa-icon>
+                <div class="dropdown-cart" *ngIf="showCart" >
+                    <!-- *ngIf="let c of cartData.data[0].numInCart != 0" -->
+                   <div class="cart-content" > 
+                        <div class="cart-header">
+                            <div class="title-cart">SHOPPING CART</div>
+                            <fa-icon class="icon close-cart" style="background-color:#778899" 
+                            [icon]="faClose"  (click) = "showCart1()"></fa-icon> 
+                        </div>
+                        
+                        <div class="list-cart" *ngIf="cartData.data[0].numInCart !== 0" >
+                            <div class="list-content" *ngFor="let c of cartData.data; let i = index">
+                                <div class="product-img">
+                                    <img src="./../../../assets/img/shop03.png" width="100" alt="XinCHao" >
+                                </div>
+                                <div class="product-body">
+                                    
+                                    <div class="product-name "><a class="text-black" href="#">{{c.product.title}}</a></div>
+                                    <div class="product-price text-black">
+                                        <span class="" style="color:#000000">{{c.numInCart}} x</span> {{c.product?.price | currency:'USD'}}
+                                    </div>
+                                </div>
+                                <button class="text-black btnDelete"
+                                    (click)="cartService.DeleteProductFromCart(i)">
+                                    <fa-icon class="icon" style="font-size:8px" [icon]="faClose"></fa-icon>
+                                </button>
+                            </div>
+                            
+                        </div>
+                        <div class="product-price">
+                            <small class="text-black">{{cartData.data[0].numInCart != 0 ? cartData.data.length : 0}} sản phẩm được chọn</small>
+                            <div class="text-total"> 
+                                TỔNG TIỀN:
+                                <span class="text-total">{{cartTotal | currency: 'VND'}}</span>
+                            </div>
+                        </div>
+                        <div class="option-cart">
+                            <button routerLink="/checkout" class="btnCheck">
+                                CHECKOUT
+                            </button>
+                            <button routerLink="/cart" class="btnView">
+                                View cart
+                            </button>
+                        </div>
+                   </div> 
+                </div>
+                <!-- <span >Giỏ đồ</span> -->
+            </div>
+        </div>
+    </div>
+</header>
+
+

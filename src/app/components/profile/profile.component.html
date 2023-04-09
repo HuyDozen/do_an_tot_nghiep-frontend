@@ -1,0 +1,151 @@
+<div class="container">
+  <form class="form" novalidate>
+    <div class="col-1">
+      <div class="row-1">
+        <div class="profile-img">
+          <img [src]="myUser?.photoUrl" alt="{{myUser?.firstName || myUser?.fname}}"/>
+        </div>
+      </div>
+      <div class="col-1">
+        <div class="profile-work">
+          <div>WORK LINK</div>
+          <hr>
+          <a href="">Website Link</a>
+          <a href="">Bootsnipp Profile</a>
+          <a href="">Bootply Profile</a>
+          <div>SKILLS</div>
+          <hr>
+          <a href="">Web Designer</a>
+          <a href="">Web Developer</a>
+          <a href="">WordPress</a>
+          <a href="">WooCommerce</a>
+          <a href="">PHP, .Net</a>
+        </div>
+      </div>
+    </div>
+    <div class="col-container">
+       <div class="col-2">
+      <div class="row-1">
+        <div class="profile-head">
+          <h5>
+            {{myUser?.name || (myUser.fname + ' ' + myUser.lname)}}
+          </h5>
+          <h6>
+            Web Developer and Designer
+          </h6>
+          <p class="proile-rating">RANKINGS : <span>8/10</span></p>
+          <div class="nav-tabs" id="myTab" role="tablist">
+            <div class="nav-item">
+              <a aria-controls="home" aria-selected="true" class="nav-link active" data-toggle="tab" href="#home" id="home-tab"
+                 role="tab">About</a>
+            </div>
+            <div class="nav-item">
+              <a aria-controls="profile" aria-selected="false" class="nav-link" data-toggle="tab" href="#profile" id="profile-tab"
+                 role="tab">Timeline</a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-2">
+        <div class="tab-content" id="myTabContent">
+          <div aria-labelledby="home-tab" class="tab-pane" id="home" role="tabpanel">
+            <div class="row">
+              <div class="col text-left">
+                <label>User Id</label>
+              </div>
+              <div class="col -text-right">
+                <div>{{myUser.id || myUser.userId}}</div>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col">
+                <label>Name</label>
+              </div>
+              <div class="col">
+                <div>{{myUser.name || myUser.username}}</div>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col">
+                <label>Email</label>
+              </div>
+              <div class="col">
+                <div>{{myUser.email}}</div>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col">
+                <label>Phone</label>
+              </div>
+              <div class="col">
+                <div>9999-778-754</div>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col">
+                <label>Profession</label>
+              </div>
+              <div class="col">
+                <div>Web Developer and Designer</div>
+              </div>
+            </div>
+          </div>
+          <div aria-labelledby="profile-tab" class="tab-pane fade" id="profile" role="tabpanel">
+            <div class="row">
+              <div class="col">
+                <label>Experience</label>
+              </div>
+              <div class="col">
+                <div>Expert</div>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col">
+                <label>Hourly Rate</label>
+              </div>
+              <div class="col">
+                <div>10$/hr</div>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col">
+                <label>Total Projects</label>
+              </div>
+              <div class="col">
+                <div>230</div>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col">
+                <label>English Level</label>
+              </div>
+              <div class="col">
+                <div>Expert</div>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col">
+                <label>Availability</label>
+              </div>
+              <div class="col">
+                <div>6 months</div>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col">
+                <label>Your Bio</label><br/>
+                <div>Your detail description</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    </div>
+    <div class="col">
+      <div class="row">
+        <button (click)="logout()" class="btn btn-secondary btn-sm" name="btnAddMore" type="button">Logout</button>
+      </div>
+    </div>
+  </form>
+</div>

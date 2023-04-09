@@ -1,0 +1,110 @@
+.home-container{
+    color: #000000;
+    background-color: 	#FFFFFF;
+    
+}
+
+.home-header{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+.row-container{
+    padding: 20px 50px 20px 50px;
+}
+.head--title{
+    color: #FF4500;
+    font-family: notosans-bold;
+    cursor: pointer;
+}
+.new-list{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 20px 20px;
+}
+.text-black{
+    color:#000000;
+}
+.card img{
+    height: auto;
+    width: auto;
+    border: 1px solid#A9A9A9;
+    padding-bottom: 20px;
+    width: 280px;
+    height: 280px;
+}
+.title-product{
+    background-color: #DCDCDC	;
+    width: 100%;
+    border-top:1px solid #FF4500;
+    padding: 10px 18px;
+}
+.cart-body{
+    padding: 10px 18px;
+}
+.option-cart{
+    text-align: center;
+}
+.btnCart{
+    color: #00BFFF;
+    border: 1px solid #00BFFF;
+    cursor: pointer;
+    padding: 10px 30px;
+    background-color: #ffffff;
+}
+.btnCart:hover{
+    background-color: #DCDCDC;
+}
+.disabled{ 
+    cursor: not-allowed;
+    color: red;
+}
+.btn-outline-danger{
+    border: 1px solid red;
+}
+.home-category{
+    display: flex;
+    flex-direction: row;
+    column-gap: 20px;
+    padding: 10px 10px;
+}
+.name-category{
+    cursor: pointer;
+}
+.name-category:hover{
+    color: #FFFF00;
+}
+.slider {
+    font-family: sans-serif;
+    scroll-snap-type: x mandatory;	
+    display: flex;
+    -webkit-overflow-scrolling: touch;
+    overflow-x: scroll;
+    overflow: -moz-scrollbars-none;
+    -ms-overflow-style: none;
+}
+.slider::-webkit-scrollbar { 
+    width: 0 !important;
+    display: none; 
+  }
+section {
+    border-right: 1px solid white;
+    
+    min-width: 100vw;
+    height: 100vh;
+    scroll-snap-align: start;
+    text-align: center;
+    position: relative;
+}
+h1	{
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    text-align: center;
+    color: #000000;
+    width: 100%;
+    left: 0;
+    font-size: calc(1rem + 3vw);
+}

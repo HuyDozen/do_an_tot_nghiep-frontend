@@ -1,0 +1,116 @@
+.product-page{
+    display: flex;
+    flex-direction: row;
+    padding: 50px 50px;
+    justify-content: space-between;
+}
+.row{
+    display: flex;
+    flex-direction: row;
+    column-gap: 10px;
+}
+.btnOrder{
+    cursor: pointer;
+    border-radius: 16px;
+    font-family: notosans-bold;
+    color: #ffffff;
+    border: none;
+    height: 32px;
+    background-color: #FF0000;
+    padding: 0px 20px;
+  }
+  .title-product{ 
+    color: #000000;
+    font-family: notosans-bold;
+    font-size: 30px;
+    font-weight: 700;
+}
+.dash-container{
+    display: flex;
+    align-content: center;
+    text-align: center;
+    padding: 0px 2px;
+    height: 100%;
+    border: none;
+    width: 22px;
+    padding: 0 4px;
+}
+.dash{
+    cursor: pointer;
+    border-radius: 4px;
+    border: 2px solid #000000;
+}
+.dash-content{
+    width: 100%;
+    
+}
+.form{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    column-gap: 4px;
+    padding: 0px 20px;
+}
+.iptNumberOfPr{
+    color: #000000;
+    width:50px;
+    height: 20px;
+    padding-left: 20px;
+}
+
+.section{
+    padding: 50px;
+}
+.breadcrumb-tree{
+    display: flex;
+    flex-direction: row;
+    background-color: #f6f6f6;
+    column-gap: 20px;
+}
+.link{
+    color: #B0C4DE;
+    text-decoration: none;
+}
+.review-link{
+    color: #000000;
+    text-decoration: none;
+}
+.product-price, .product-available{
+    color: #FF0000;
+    font-family: notosans-bold;
+    font-size: 20px;
+    font-weight: 700;
+}
+
+#product-main-img img{
+    height: 500px;
+    width: 500px;
+    border: 1px solid black;
+    border: none;
+}
+.product-preview img{
+    height: 150px;
+    width: 150px;
+    border: 1px solid black;
+    border: none;
+}
+.container{
+    display: flex;
+    flex-direction: row;
+}
+.row{
+    display: flex;
+    flex-direction: row;
+    column-gap: 20px;
+}
+.product-name{
+    font-family: notosans-bold;
+    font-size: 30px;
+    font-weight: 700;
+}
+.product-details{
+    display: flex;
+    flex-direction: column;
+    row-gap: 10px;
+}

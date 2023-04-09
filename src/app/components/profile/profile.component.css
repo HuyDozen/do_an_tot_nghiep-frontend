@@ -1,0 +1,59 @@
+.container{
+    display: flex;
+    padding: 50px 100px;
+    
+   
+  }
+  .form{
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    
+  }
+  .row-1{
+    display: flex;
+    flex-direction: row;
+    column-gap: 60px;
+    height: 200px;
+  }
+  .row{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+   
+  }
+  .col-1{
+    display: flex;
+    flex-direction: column;
+  }
+  .col-2{
+    width: 450px;
+    display: flex;
+    flex-direction: column;
+  }
+  .nav-tabs{
+    display: flex;
+    column-gap: 10px;
+  }
+  .text-left{
+    text-align: left;
+  }
+  .text-right{
+    text-align: right;
+  }
+  .profile-work{
+    display: flex;
+    flex-direction: column;
+    row-gap: 10px;
+  }
+  .profile-head{
+    display: flex;
+    flex-direction: column;
+    row-gap: 10px;
+  }
+  .tab-pane{
+    display: flex;
+    flex-direction: column;
+    row-gap: 10px;
+  }

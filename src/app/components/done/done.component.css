@@ -1,0 +1,19 @@
+.container{
+    color: #000000;
+    background-color: 	#FFFFFF;
+    padding: 20px 50px 20px 50px;
+}
+.table{
+    width: 100%;
+}
+.title-done{
+    color: #000000;
+    font-family: notosans-bold;
+    font-size: 54px;
+    font-weight: 700;
+    padding: 50px;
+}
+.jumbotron{
+    text-align: center;
+    background-color: #f6f6f6;
+}

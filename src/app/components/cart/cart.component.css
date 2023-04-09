@@ -1,0 +1,109 @@
+.page-heading{
+    text-align: center;
+    width: 100%;
+}
+.cart-title{ 
+    color: #000000;
+    font-family: notosans-bold;
+    font-size: 54px;
+    font-weight: 700;
+    padding: 50px;
+}
+.page{
+    width: 100%;
+    height: auto;
+    padding: 10px 0 10px 60px;
+}
+.text-empty-cart{
+    color: #000000;
+    font-family: notosans-bold;
+    font-size: 38px;
+    font-weight: 700;
+}
+.btnReturn{
+    height: 50px;
+    /* Chuan */
+    padding: 14px 20px; 
+    font-family: notosans-bold;
+    color: #000000;
+    cursor: pointer;
+    border: none;
+}
+.btnCheckout{
+    height: 50px;
+    /* Chuan */
+    padding: 14px 20px; 
+    font-family: notosans-bold;
+    color: #000000;
+    cursor: pointer;
+    border: none;
+}
+.row{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    background-color: #ffffff;
+    padding-bottom: 60px;
+}
+.col{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    padding-bottom: 60px;
+    column-gap: 12px;
+}
+.dash-container{
+    display: flex;
+    align-content: center;
+    text-align: center;
+    padding: 0px 2px;
+    height: 100%;
+    border: none;
+    width: 22px;
+    padding: 0 4px;
+}
+.dash{
+    cursor: pointer;
+    border-radius: 4px;
+    border: 2px solid #000000;
+}
+.dash-content{
+    width: 100%;
+    
+}
+.form{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    column-gap: 4px;
+    padding: 0px 20px;
+}
+.iptNumberOfPr{
+    color: #000000;
+    width:50px;
+    height: 20px;
+    padding-left: 20px;
+}
+.text-title-table{
+    color: #000000;
+    font-family: notosans-bold;
+    font-size: 20px;
+    font-weight: 700;
+}
+th,td {
+    border-bottom: 1px solid;
+    border-right: 1px solid; 
+  }
+.text-right{
+    text-align: right;
+}
+.table{
+    border-collapse: collapse;
+}
+.text-left{
+    text-align: left;
+}
+tr:last-child td:nth-child(3){
+    border-bottom: none;
+}
