@@ -1,0 +1,99 @@
+<div class="page-heading">
+    <div class="cart-title">CHECKOUT</div>
+</div>
+<div class="checkout-container" *ngIf="cartTotal > 0">  
+    <div class="col">
+        <div class="row">
+            <div class="line-checkout"></div>
+        </div>
+        <div class="row">
+            <div class="title-checkout">BILING ADDRESS</div>
+            <div class="address-info">
+                <input class="iptInforAddress" type="text" placeholder="First Name">
+                <input class="iptInforAddress" type="text" placeholder="Last Name">
+                <input class="iptInforAddress" type="text" placeholder="Email">
+                <input class="iptInforAddress" type="text" placeholder="Address">
+                <input class="iptInforAddress" type="text" placeholder="City">
+                <input class="iptInforAddress" type="text" placeholder="Country">
+                <input class="iptInforAddress" type="text" placeholder="Zip Code">
+                <input class="iptInforAddress" type="text" placeholder="Telephone">
+                <label class="lblCheckbox">Create account?
+                    <input type="checkbox">
+                    <span class="checkmark"></span>
+                  </label>
+            </div>
+        </div>
+        <div class="row">
+            <div class="title-checkout">SHIPPING ADDRESS</div>
+            <div class="address-info">
+                <label class="lblCheckbox">Ship to different address?
+                    <input type="checkbox">
+                    <span class="checkmark"></span>
+                </label>
+                <input class="iptInforAddress" type="text" placeholder="Order Notes">
+            </div>
+        </div>
+    </div>
+    <div class="col">
+        <div class="order--contain">
+            <div class="title-checkout text-center">YOUR ORDER</div>
+            <div class="line-checkout"></div>
+            <table>
+                <thead>
+                    <tr>
+                        <th class="text-title text-left">
+                            PRODUCT
+                        </th>
+                        <th class="text-title text-right">
+                            TOTAL
+                        </th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let c of cartData.data">
+                        <td>{{c.numInCart}} x {{c.product.title}}</td>
+                        <td class="text-right">{{(c.product.price * c.numInCart) | currency: 'VND'}} </td>
+                    </tr>
+                    <tr>
+                        <td class="text-title">
+                            TOTAL
+                        </td>
+                        <td class="text-title text-right">{{cartTotal | currency: 'VND'}}</td>
+                    </tr>
+                </tbody>
+            </table>
+            <div class="option-payment">
+                <div class="address-info">
+                    <label class="lblCheckbox">Direct Bank Transfer
+                        <input type="checkbox">
+                        <span class="checkmark"></span>
+                    </label>
+                </div>
+                <div class="address-info">
+                    <label class="lblCheckbox">Cheque Payment
+                        <input type="checkbox">
+                        <span class="checkmark"></span>
+                    </label>
+                </div>
+                <div class="address-info">
+                    <label class="lblCheckbox">Paypal System
+                        <input type="checkbox">
+                        <span class="checkmark"></span>
+                    </label>
+                </div>
+            </div>
+            <div class="address-info">
+                <label class="lblCheckbox">I've read and accept the terms & conditions
+                    <input type="checkbox">
+                    <span class="checkmark"></span>
+                </label>
+            </div>
+            <button class="btnOrder" [disabled]="cartTotal <= 0 " (click)="onCheckout()">PLACE ORDER</button>
+        </div>
+    </div>
+    
+</div>
+<div class="page" *ngIf="cartData.total <= 0">
+    <div class="text-empty-cart">YOUR CART IS EMPTY</div>
+    <button class="btnReturn" routerLink="/">GO BACK TO SHOP</button>
+</div>

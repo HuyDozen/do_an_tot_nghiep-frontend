@@ -1,0 +1,31 @@
+<div class="container">
+  <div class="page-heading">
+    <div class="login-title">LOG IN</div>
+  </div>
+  <div class="login-body">
+    <ng-container *ngIf="loginMessage?.length > 0">
+      <div class="">
+        {{loginMessage}}
+      </div>
+    </ng-container>
+  <form class="form" novalidate #myform="ngForm">
+    <div class="login-content">
+      <label for="email">Email</label>
+      
+      <input class="input-login" type="email" id="email" [(ngModel)]="email" name="email" placeholder="username" required>
+      <label for="password">Password</label>
+      
+      <input class="input-login" type="password" id="password" [(ngModel)]="password" name="password" placeholder="password" required>
+      <button class="btnLogin" (click)="login(myform)" [disabled]="myform.invalid && myform.touched">
+        Login     
+      </button>
+      <div class="text-or">Hoặc</div>
+      <button class="btnGoogle" (click)="signInWithGoogle()">
+        <fa-icon [icon]="faGoogle"></fa-icon>
+        Google</button>
+        <!-- <asl-google-signin-button></asl-google-signin-button> -->
+    </div>
+  </form>
+</div>
+
+

@@ -1,0 +1,200 @@
+<!-- <div class="product-page">
+    <div class="col">
+        <div id="product-main-img">
+            <img src="./../../../assets/img/shop03.png" width="400px" alt="" >
+        </div>
+       
+    </div>
+    
+    <div class="col">
+        <div class="title-product">
+            {{product.title}}
+        </div>
+        <div>DanhGia</div>
+        <div>{{product.price | currency: 'VND'}}</div>
+        <div>{{product.description}}</div>
+        <div class="row">
+            <div>SIZE</div>
+            <div>COLOR</div>
+        </div>
+        <div class="row">
+
+                <div class="form">
+                    <div class="val-btn" id="decrease" (click)="Decrease()">
+                        <div class="dash-container">
+                            <div class="dash-content">
+                                <div class="dash"></div>
+                            </div>
+                        </div>
+                        
+                    </div>
+                    <input class="iptNumberOfPr" type="number" [max]="product.quanity" [min]="product?.quanity >= 1 ? product?.quanity : 0"
+                    readonly #quanity value="{{product?.quanity >= 1 ? 1 : 0}}"
+                    />
+                    <div class="val-btn" id="increase" (click)="Increase()">
+                        <fa-icon style="cursor: pointer" class="icon" [icon]="faPlus"></fa-icon>
+                    </div>
+                </div>
+          
+            <button class="btnOrder" (click)="addToCart(product?.id)">ADD TO CART</button>
+        </div>
+        <div>ADD TO WISHLIST</div>
+        <div>CATEGORY</div>
+        <div>SHARE</div>
+    </div>
+    
+</div> -->
+
+<!-- BREADCRUMB -->
+<div id="breadcrumb" class="section">
+    <!-- container -->
+    <div class="container">
+      <!-- row -->
+      <div class="row">
+        <div class="col-md-12">
+          <div class="breadcrumb-tree">
+            <div><a class="link" href="#">Home</a></div>
+            <div>/</div>
+            <div><a class="link" href="#">All Categories</a></div>
+            <div>/</div>
+            <li><a href="#">{{product.category}}</a></li>
+            <div class="active">{{product.title}}</div>
+          </div>
+        </div>
+      </div>
+      <!-- /row -->
+    </div>
+    <!-- /container -->
+  </div>
+  <!-- /BREADCRUMB -->
+  
+  <!-- SECTION -->
+  <div class="section">
+    <!-- container -->
+    <div class="container">
+      <!-- row -->
+      <div class="row">
+        <!-- Product main img -->
+        <div class="col">
+          <div id="product-main-img">
+            <ng-template [ngIf]="thumbImages.length == 0">
+              <div class="product-preview">
+                <img src="../../../assets/img/product01.png"  alt="{{product.title}}">
+              </div>
+            </ng-template>
+            <ng-template [ngIf]="thumbImages.length > 0">
+              <div class="product-preview" *ngFor="let t of thumbImages">
+                <!-- <img [src]="t" alt="{{product.title}}"> -->
+                <img src="../../../assets/img/product01.png"  alt="{{product.title}}">
+              </div>
+            </ng-template>
+          </div>
+        </div>
+        <!-- /Product main img -->
+  
+        <!-- Product thumb imgs -->
+        <div class="col-md-2  col-md-pull-5">
+          <ng-template [ngIf]="thumbImages.length > 0">
+            <div id="product-imgs">
+              <div class="product-preview" *ngFor="let t of thumbImages">
+                <!-- <img [src]="t" alt="{{product.title}}"> -->
+                <img src="../../../assets/img/product01.png"  alt="{{product.title}}">
+              </div>
+            </div>
+          </ng-template>
+          <ng-template [ngIf]="thumbImages.length == 0">
+            <div id="product-imgs">
+              <div class="product-preview">
+                <!-- <img [src]="product.image" alt="{{product.title}}"> -->
+                <img src="../../../assets/img/product01.png"  alt="{{product.title}}">
+              </div>
+            </div>
+          </ng-template>
+  
+        </div>
+        <!-- /Product thumb imgs -->
+  
+        <!-- Product details -->
+        <div class="col-product">
+          <div class="product-details">
+            <h2 class="product-name">{{product.title}}</h2>
+            <div class="row">
+              <div>
+                <i><fa-icon [icon]="faStar"></fa-icon></i>
+                <i><fa-icon [icon]="faStar"></fa-icon></i>
+                <i><fa-icon [icon]="faStar"></fa-icon></i>
+                <i><fa-icon [icon]="faStar"></fa-icon></i>
+                <i><fa-icon [icon]="faStar"></fa-icon></i>
+              </div>
+              <a class="review-link" href="#">10 Review(s) | Add your review</a>
+            </div>
+            <div class="row">
+              <h3 class="product-price">{{product.price | currency:'USD'}}</h3>
+              <span class="product-available">In Stock</span>
+            </div>
+            <p>
+              {{product.description}}
+            </p>
+  
+            <div class="row">
+                <div class="form">
+                    <div class="val-btn" id="decrease" (click)="Decrease()">
+                        <div class="dash-container">
+                            <div class="dash-content">
+                                <div class="dash"></div>
+                            </div>
+                        </div>
+                        
+                    </div>
+                    <input class="iptNumberOfPr" type="number" [max]="product.quanity" [min]="product?.quanity >= 1 ? product?.quanity : 0"
+                    readonly #quanity value="{{product?.quanity >= 1 ? 1 : 0}}"
+                    />
+                    <div class="val-btn" id="increase" (click)="Increase()">
+                        <fa-icon style="cursor: pointer" class="icon" [icon]="faPlus"></fa-icon>
+                    </div>
+                </div>
+          
+            <button class="btnOrder" (click)="addToCart(product?.id)">ADD TO CART</button>
+        </div>
+  
+            <div class="row">
+              <div><a class="review-link" href="#">
+                <fa-icon style="cursor: pointer" class="icon" [icon]="faHeart"></fa-icon> 
+                Add to wishlist
+            </a></div>
+              <div><a class="review-link" href="#">
+                <fa-icon style="cursor: pointer" class="icon" [icon]="faCodeCompare"></fa-icon>  Add to compare</a></div>
+            </div>
+  
+            <div class="row">
+              <div>Category:</div>
+              <div><a class="review-link" href="#">Headphones</a></div>
+              <div><a class="review-link" href="#">Accessories</a></div>
+            </div>
+  
+            <div class="row">
+              <div>Share:</div>
+              <div><a class="review-link" href="#">
+                <fa-icon style="cursor: pointer" class="icon" [icon]="faFacebook"></fa-icon>
+              </a></div>
+              <div><a class="review-link" href="#">
+                <fa-icon style="cursor: pointer" class="icon" [icon]="faGoogle"></fa-icon>
+              </a></div>
+              <div><a class="review-link" href="#">
+                <fa-icon style="cursor: pointer" class="icon" [icon]="faTwitter"></fa-icon>
+              </a></div>
+              <div><a class="review-link" href="#">
+                <fa-icon style="cursor: pointer" class="icon" [icon]="faDiscord"></fa-icon>
+              </a></div>
+            </div>
+  
+          </div>
+        </div>
+        <!-- /Product details -->
+  
+      </div>
+      <!-- /row -->
+    </div>
+    <!-- /container -->
+  </div>
+  <!-- /SECTION -->

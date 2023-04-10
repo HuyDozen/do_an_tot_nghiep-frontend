@@ -1,0 +1,69 @@
+<div class="home" id="home">
+    <div class="home-container">
+      <div class="slider">
+        <section>
+            <img src="https://images5.alphacoders.com/958/thumb-1920-958580.jpg" alt="Rong">
+        </section>
+        <section>
+            <img src="https://images5.alphacoders.com/958/thumb-1920-958580.jpg" alt="Rong">
+        </section>
+        <section>
+            <h1>Section Three</h1>
+        </section>
+        <section>
+            <h1>Section Four</h1>
+        </section>
+        <section>
+            <h1>Section Five</h1>
+        </section>
+    </div>
+        <div class="row-container">
+          <div class="home-category">
+            <div *ngFor="let c of categories" class="name-category">
+              <div>
+                {{c.title}}
+              </div>
+            </div>
+          </div>
+            <div class="home-header">
+                <div class="head--title">SẢN PHẨM MỚI</div>
+                <div class="text-black head--category">Một số thuộc tính</div>
+            </div>
+            <div class="new-list">
+              <div  *ngFor="let p of products">
+                <div class="card">
+                  <!-- <img src="./../../../assets/img/shop03.png" width="400px" alt=""  -->
+                  <img src="https://i.imgur.com/1PN6Giu.jpg"
+                  style="cursor: pointer;"(click)="selectProduct(p.id)">
+                  <div class="title-product">
+                    <p class="text-black">{{p.title | titlecase}}</p>
+                  </div>
+                  <div class="cart-body">
+                    <div class="text-black">
+                      {{p.description}}
+                    </div>
+                    <div class="text-black">
+                      {{p.price | currency: 'VND'}}
+                    </div>
+                  </div>
+                  <div class="option-cart">
+                    <button class="btnCart text-blue" 
+                    [disabled] = "p.quanity < 1"
+                    [class.btn-outline-danger] = "p.quanity< 1"
+                      (click)="AddToCart(p.id)"
+                    >                    
+                      {{p.quanity < 1 ? "NO STOCK" : "Add to cart"}}
+                    </button>
+                  </div>
+                </div>
+                
+              </div>
+            </div>
+            
+            
+        </div>
+      
+    </div>
+    
+</div>
+ 

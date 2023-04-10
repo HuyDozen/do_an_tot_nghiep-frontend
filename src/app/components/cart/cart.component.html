@@ -1,0 +1,74 @@
+<div class="container">
+    <!-- Khi gio hang trong -->
+    <div class="page-heading">
+        <div class="cart-title">CART</div>
+    </div>
+   <div class="page" *ngIf="cartData.data[0].numInCart == 0">
+    <div class="text-empty-cart">YOUR CART IS EMPTY</div>
+    <button class="btnReturn" routerLink="/">GO BACK TO SHOP</button>
+    <div class="cart-"></div>
+   </div>
+    
+   <!-- Khi gio hang co hang -->
+   <ng-container *ngIf="cartData.data[0].numInCart != 0">
+        <div class="row">
+        <table class="table">
+            <thead class="table-dark">
+                <tr class="text-center">
+                    <th class="text-title-table text-left">Image</th>
+                    <th class="text-title-table text-left">Title</th>
+                    <th class="text-title-table text-right">Price</th>
+                    <th class="text-title-table">Quantity</th>
+                    <th class="text-title-table text-right">Subtotal</th>
+                </tr>
+            </thead>
+
+            <tbody>
+                <tr *ngFor="let c of cartData.data; let i=index">
+                    <td class="">
+                        <img src="./../../../assets/img/shop03.png" height="60" alt="{{c.product.title}}" class="order-1" >
+                        <span></span>
+                    </td>
+                    <td class="text-left">{{c.product.title}}</td>
+                    <td class="text-right">{{c.product.price | currency:'VND'}}</td>
+                    <td>
+                        <form class="form" action="">
+                            <div class="val-btn" id="decrease" (click)="ChangeQuantity(i,false)">
+                                <div class="dash-container">
+                                    <div class="dash-content">
+                                        <div class="dash"></div>
+                                    </div>
+                                </div>
+                                
+                            </div>
+                            <input class="iptNumberOfPr" type="number" id="number" [value]="c.numInCart" readonly [max]="c.product.quanity"/>
+                            <div class="val-btn" id="increase">
+                                <fa-icon style="cursor: pointer" (click)="ChangeQuantity(i,true)" class="icon" [icon]="faPlus"></fa-icon>
+                            </div>
+                        </form>
+                    </td>
+                    <td class="text-right">
+                        <p>{{cartService.CalculateSubTotal(i) | currency: 'VND'}}</p>
+                    </td>
+                </tr>
+                <tr class="">
+                    <td style="border: none;"></td>
+                    <td style="border: none;"></td>
+                    <td ></td>
+                    <td>TOTAL: </td>
+                    <td>{{cartTotal | currency:'VND'}}</td>
+                </tr>
+            </tbody>
+        </table>   
+    </div>
+    <div class="col">
+        
+            <button routerLink="/checkout" class="btnCheckout">
+                Checkout
+            </button>
+            <button class="btnReturn" routerLink="/">GO BACK TO SHOP</button>
+      
+    </div>
+        
+   </ng-container>
+</div>
